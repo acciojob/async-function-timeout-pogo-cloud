@@ -6,12 +6,16 @@ but.addEventListener("click",(event)=>{
 	ted();
 })
 const display=()=>{
+console.log('display function called');
 let ele=document.querySelector("#text");
 let num=document.querySelector("#delay");
 	return new Promise((res,rej)=>{
         setTimeout(()=>{
 			if(ele.value!==""&&num.value!==""){
-		   res(output.innerHTML=ele.value);
+    //          console.log('ele.value: ', ele.value); // Add this line
+			 // console.log('num.value: ', num.value);
+    //         console.log("Promise is working");
+		   res(output.innerHTML=ele.value+"-"+num.value);
 		}else{
            rej("Inputs cannot  be empty");
          }
