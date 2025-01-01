@@ -11,7 +11,7 @@ let num=document.querySelector("#delay");
 	return new Promise((res,rej)=>{
         setTimeout(()=>{
 			if(ele.value!==""&&num.value!==""){
-		   res(output.innerHTML=ele.value+"-"+num.value);
+		   res(output.innerHTML=ele.value);
 		}else{
            rej("Inputs cannot  be empty");
          }
