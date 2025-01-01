@@ -7,7 +7,7 @@ but.addEventListener("click",(event)=>{
 })
 const display=()=>{
 let ele=document.querySelector("#text");
-let num=document.querySelector("#num");
+let num=document.querySelector("#delay");
 	return new Promise((res,rej)=>{
         setTimeout(()=>{
 			if(ele.value!==""&&num.value!==""){
