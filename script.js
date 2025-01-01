@@ -1,21 +1,30 @@
 
 let but=document.querySelector("#btn");
 let output=document.getElementById("output");
-btn.addEventListener("click",(event)=>{
+but.addEventListener("click",(event)=>{
 	event.preventDefault();
 	ted();
 })
 const display=()=>{
 let ele=document.querySelector("#text");
 let num=document.querySelector("#num");
-	return Promise((res)=>{
-		if(ele.value!==" "&&num.value!==" "){
+	return new Promise((res,rej)=>{
+        setTimeout(()=>{
+			if(ele.value!==""&&num.value!==""){
 		   res(output.innerHTML=ele.value+"-"+num.value);
-		}
+		}else{
+           rej("Inputs cannot  be empty");
+         }
+			
+		},num.value*1000)
+		
 	})
 }
 async function ted(){
-    setTimeOut(()=>{
-		const p= await display();
-	},1000)
+	try {
+		const p = await display();
+	} catch (error) {
+		console.error(error);
+	}
+	
 }
